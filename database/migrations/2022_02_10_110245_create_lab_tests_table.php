@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('lab_tests', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->default(0);
+            $table->integer('price')->default(0);
+            $table->integer('percentage')->default(0);
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('billing_invoices', function (Blueprint $table) {
+        Schema::create('operation_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->tinyInteger('status')->default(0);
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('billing_invoices');
+        Schema::dropIfExists('operation_types');
     }
 };

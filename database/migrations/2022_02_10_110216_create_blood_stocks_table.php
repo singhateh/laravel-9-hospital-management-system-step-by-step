@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\BloodBank;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,9 @@ return new class extends Migration
     {
         Schema::create('blood_stocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(BloodBank::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

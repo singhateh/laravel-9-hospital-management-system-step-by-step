@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('specialists', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->fulltext();
+            $table->string('code')->fulltext();
+            $table->tinyInteger('status')->default(0)->comment('1 = Active', '0 = InActive');
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
