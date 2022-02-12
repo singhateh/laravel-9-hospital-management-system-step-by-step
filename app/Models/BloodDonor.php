@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BloodDonor extends Model
 {
     use HasFactory;
+
+    protected $fillable  = [     ]; // We will complete here later
 }
