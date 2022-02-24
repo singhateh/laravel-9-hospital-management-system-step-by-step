@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('fax')->nullable();
             $table->string('country')->nullable();
             $table->string('address')->nullable();
-            $table->date('establish')->nullable();
+            $table->dateTime('establish')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
@@ -42,8 +42,9 @@ return new class extends Migration
             $table->string('driver')->nullable();
             $table->string('encryption')->nullable();
             $table->string('host')->nullable();
-            $table->string('port')->nullable();
+            $table->integer('port')->nullable();
             $table->string('username')->nullable();
+            $table->string('password')->nullable();
             $table->string('email_from')->nullable();
             $table->string('email_from_name')->nullable();
 
@@ -53,7 +54,7 @@ return new class extends Migration
             $table->string('invoice_logo')->nullable();
             $table->string('user_prefix')->nullable();
             $table->string('patient_prefix')->nullable();
-            $table->string('invoice_number_mood')->nullable();
+            $table->integer('invoice_number_mode')->nullable();
             $table->string('invoice_last_number')->nullable();
 
             // Tax config

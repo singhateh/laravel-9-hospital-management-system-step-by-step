@@ -10,10 +10,10 @@
                     <a href="{{ route('home') }}"><i class="la la-dashboard"></i> <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="clients.html"><i class="la la-users"></i> <span>HR Management</span></a>
+                    <a href="#"><i class="la la-users"></i> <span>HR Management</span></a>
                 </li>
                 <li>
-                    <a href="clients.html"><i class="la la-users"></i> <span>Accounting Management</span></a>
+                    <a href="clients.html"><i class="la la-users"></i> <span>ACCT Management</span></a>
                 </li>
                 <li>
                     <a href="clients.html"><i class="la la-users"></i> <span>Appointments</span></a>
@@ -22,7 +22,7 @@
                     <a href="clients.html"><i class="la la-users"></i> <span>Departments</span></a>
                 </li>
                 <li>
-                    <a href="clients.html"><i class="la la-users"></i> <span>Patient Management</span></a>
+                    <a href="clients.html"><i class="la la-users"></i> <span>PT. Management</span></a>
                 </li>
                 <li>
                     <a href="clients.html"><i class="la la-users"></i> <span>Lab Management</span></a>
@@ -37,7 +37,7 @@
                     <a href="clients.html"><i class="la la-users"></i> <span>Room Management</span></a>
                 </li>
                 <li>
-                    <a href="clients.html"><i class="la la-users"></i> <span>Ambulance Management</span></a>
+                    <a href="clients.html"><i class="la la-users"></i> <span>ABM Management</span></a>
                 </li>
 
                 <li>
