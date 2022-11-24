@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use App\Http\Jambasangsang\Traits\updatableAndCreatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Http\Jambasangsang\Traits\updatableAndCreatable;
 
 class Patient extends Model
 {
@@ -23,4 +24,21 @@ class Patient extends Model
     'next_of_kin_email','next_of_kin_address', 'payment_method',
     'symptoms','image', 'user_id', // As Doctor Id
     'status','created_by_id', 'updated_by_id'];
+
+
+
+    public function doctor(): BelongsTo  // User refer to a doctor in this point
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function createdBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by_id', 'id');
+    }
+
+    public function updatedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by_id', 'id');
+    }
 }

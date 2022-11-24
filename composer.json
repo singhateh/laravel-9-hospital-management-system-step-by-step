@@ -11,7 +11,8 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

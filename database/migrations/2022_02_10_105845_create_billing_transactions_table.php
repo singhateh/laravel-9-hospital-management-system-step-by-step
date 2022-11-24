@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('billing_transactions', function (Blueprint $table) {
             $table->id();
+            $table->integer('pending_amount')->default(0);
             $table->integer('payment_amount')->default(0);
-            $table->tinyInteger('payment_amount')->default(0);
             $table->tinyInteger('status')->default(0);
             $table->foreignIdFor(PatientVisit::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignIdFor(BillingInvoice::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
